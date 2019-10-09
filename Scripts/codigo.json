@@ -1,0 +1,18 @@
+def my_first_function():
+   return print ("Hello World!")
+my_first_function()
+#a=1
+#b=2
+
+Modificaciones/Course_Data_Science_Platzi
+
+db.inventory.insertOne(
+ {_id: "soyd", item: "canvas", qty: 100, tags: ["cotton"], size: { h:28, w: 35.5, uom: "cm"}}
+ )
+
+ db
+ platzi-db
+ db.inventory.find().pretty()
+ db.inventory.findOne({_id: ObjectId('5d558003b1bc29e5b2d34c91'), qty: {$lte:125}})
+ db.inventory.updateOne({_id: ObjectId('5d558003b1bc29e5b2d34c91')}, {$set:{qty:130}})
+ db.inventory.deleteMany({status: "A"})
