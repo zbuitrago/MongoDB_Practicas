@@ -1,10 +1,17 @@
-def my_first_function():
-   return print ("Hello World!")
-my_first_function()
-#a=1
-#b=2
 
-Modificaciones/Course_Data_Science_Platzi
+# Course_Data_Science_Platzi
+#  show dbs --> nos permite visualizar los dbs 
+# use namedbs --> para crear o utilizar el db que necesitamos
+#db.namecoleccion.--> para crear o utilizar el documento
+# insertOne --> lo que hace es guardar  un documento dentro de una bd
+/*crear una coleccion e insertar un documento */
+db.inventory.insertOne( {item: "canvas", qty: 100, tags: ["cotton"], size: { h:28, w: 35.5, uom: "cm"}}
+ )
+# bd nos devuelve una bandera donde nos confirma si el documento quedo guardado
+
+
+
+
 
 db.inventory.insertOne(
  {_id: "soyd", item: "canvas", qty: 100, tags: ["cotton"], size: { h:28, w: 35.5, uom: "cm"}}
