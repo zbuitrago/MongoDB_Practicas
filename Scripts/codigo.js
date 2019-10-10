@@ -10,16 +10,25 @@ db.inventory.insertOne( {item: "canvas", qty: 100, tags: ["cotton"], size: { h:2
 # bd nos devuelve una bandera donde nos confirma si el documento quedo guardado
 
 
+# El campo _id si no es agregado por nosotros de forma explícita, MongoDB lo agrega por nosotros como un ObjectId
+# el campo _id es obligatorio en todos los documentos
 
 
-
+# ---------------------------------Create-----------------------------
 db.inventory.insertOne(
- {_id: "soyd", item: "canvas", qty: 100, tags: ["cotton"], size: { h:28, w: 35.5, uom: "cm"}}
- )
+   { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
+)
 
- db
- platzi-db
- db.inventory.find().pretty()
- db.inventory.findOne({_id: ObjectId('5d558003b1bc29e5b2d34c91'), qty: {$lte:125}})
- db.inventory.updateOne({_id: ObjectId('5d558003b1bc29e5b2d34c91')}, {$set:{qty:130}})
- db.inventory.deleteMany({status: "A"})
+
+db.inventory.insertMany( [
+   { item: "canvas", qty: 100, size: { h: 28, w: 35.5, uom: "cm" }, status: "A" },
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "mat", qty: 85, size: { h: 27.9, w: 35.5, uom: "cm" }, status: "A" },
+   { item: "mousepad", qty: 25, size: { h: 19, w: 22.85, uom: "cm" }, status: "P" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "P" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" },
+   { item: "sketchbook", qty: 80, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "sketch pad", qty: 95, size: { h: 22.85, w: 30.5, uom: "cm" }, status: "A" }
+] )
