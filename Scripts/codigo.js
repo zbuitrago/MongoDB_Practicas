@@ -32,3 +32,11 @@ db.inventory.insertMany( [
    { item: "sketchbook", qty: 80, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
    { item: "sketch pad", qty: 95, size: { h: 22.85, w: 30.5, uom: "cm" }, status: "A" }
 ] )
+
+# buscar con una codicion de igualdad
+db.inventory.find( { item: "canvas" } )
+
+# para imprimer mas organizado .pretty
+db.inventory.find( { item: "canvas" } ).pretty() 
+
+# Atomicidad, todas las operaciones de escritura en MongoDB con atómicas a nivel de documentos 
